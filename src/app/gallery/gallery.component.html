@@ -1,0 +1,133 @@
+
+	<!-- loading gif animation -->
+	<div [hidden]="!loading">
+		<svg width='120px' height='120px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-default"><rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='##ffffff' transform='rotate(0 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='-1s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='##ffffff' transform='rotate(30 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='-0.9166666666666666s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='##ffffff' transform='rotate(60 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='-0.8333333333333334s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='##ffffff' transform='rotate(90 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='-0.75s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='##ffffff' transform='rotate(120 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='-0.6666666666666666s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='##ffffff' transform='rotate(150 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='-0.5833333333333334s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='##ffffff' transform='rotate(180 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='-0.5s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='##ffffff' transform='rotate(210 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='-0.4166666666666667s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='##ffffff' transform='rotate(240 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='-0.3333333333333333s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='##ffffff' transform='rotate(270 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='-0.25s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='##ffffff' transform='rotate(300 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='-0.16666666666666666s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='##ffffff' transform='rotate(330 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='-0.08333333333333333s' repeatCount='indefinite'/></rect></svg>
+	</div>
+
+	<div *ngIf="allData">
+
+		<div *ngIf="allData.payload">
+		
+			<a *ngIf="allData.payload" class="backBtn hidden" (click)="backToList();" [hidden]="currentList == '' && currentGalleryName == 'sssi-photosite-landing-const'">Go Back</a>
+
+			<a *ngIf="allData.payload" class="backBtn" routerLink="" [hidden]="!(currentList == '' && currentGalleryName == 'sssi-photosite-landing-const')">Go Back</a>
+
+			<ul *ngIf="allData && allData.firstLayerLinks" class="pink_title allAllbumns" [hidden]="currentList !== '' || currentGalleryName !== 'sssi-photosite-landing-const'">
+				<li  *ngFor="let layerLink of allData.firstLayerLinks" attr.firstLayerId="{{firstLayerName}}">
+					<a class="pink_title firstLayerLink" href="javascript:void(0);"  (click)="onKeyLinks(layerLink.firstLayerName)">{{layerLink.firstLayerName}}</a>
+					<a class="rightAlign small button firstLayerLink" href="javascript:void(0);"  (click)="onKeyLinks(layerLink.firstLayerName)">View Gallery</a>
+				</li>  
+			</ul>
+
+			<ul *ngIf="allData && allData.firstLayerLinks" class="pink_title allAllbumns">
+				<li *ngFor="let dir of allData.payload" attr.dirname="{{dir.dirName}}" [hidden]="currentList !== dir.firstLayerName">
+					<a class="pink_title galleryFolder" attr.dirname="{{dir.dirName}}" href="javascript:void(0);" (click)="onKey(dir.dirName,dir.folderName)">{{dir.folderName}}</a>
+					<a class="rightAlign small button galleryFolder" attr.dirname="{{dir.dirName}}" href="javascript:void(0);" (click)="onKey(dir.dirName,dir.folderName)">View Gallery</a>
+				</li>
+			</ul>
+
+			<ul *ngIf="!allData.firstLayerLinks" class="pink_title allAllbumns" [hidden]="currentGalleryName !== 'sssi-photosite-landing-const'">
+				<li *ngFor="let dir of allData.payload" attr.dirname="{{dir.dirName}}">
+					<a class="pink_title galleryFolder" attr.dirname="{{dir.dirName}}" href="javascript:void(0);" (click)="onKey(dir.dirName,dir.folderName)">{{dir.folderName}}</a>
+					<a class="rightAlign small button galleryFolder" attr.dirname="{{dir.dirName}}" href="javascript:void(0);" (click)="onKey(dir.dirName,dir.folderName)">View Gallery</a>
+				</li>
+			</ul>
+
+			<div [hidden]="currentGalleryName !== dir.dirName" appGalleryPlugin [dirName]="dir.dirName" class="gallery" *ngFor="let dir of allData.payload;">
+
+		    	<h2 *ngIf="dir.firstLayerName" class="pageTitle">{{galleryId}}/{{dir.firstLayerName}}/{{currentGalleryNameDisplay}}</h2>	
+
+		    	<h2 *ngIf="!dir.firstLayerName" class="pageTitle">{{galleryId}}/{{currentGalleryNameDisplay}}</h2>	
+
+
+				<div class="photosite-navigation">
+
+					<ul class="thumbs noscript">
+
+					    <li *ngFor="let newDir of dir.galleryData">
+					    	<a class='thumb' name='leaf' href='{{newDir.mediumUri}}' title='Title #0'>
+					    		<img src='{{newDir.thumbnails}}' />
+					    	</a>
+
+					    	<div class='caption'>
+						    	<a href='{{newDir.ETagLink}}' target="_blank">Download Original</a> 
+						    	<span class="divider">|</span>
+						    	<a href='https://www.facebook.com/sharer/sharer.php?u={{newDir.socialshare}}' target="_blank" class="socialShareLink"> Share on Facebook</a> 
+						    	<span class="divider">|</span>
+						    	<a href='https://plus.google.com/share?url={{newDir.socialshare}}' target="_blank" class="socialShareLink"> Share on Google+</a> 
+					    	</div>
+					    	
+					    </li>
+
+					</ul>
+				</div>
+
+				 <div attr.id="{{dir.dirName}}gallery" class="photosite-content">
+			          <div attr.id="{{dir.dirName}}controls" class="controls"></div>
+			          <div attr.id="{{dir.dirName}}nav" class="navs"></div>
+			          <div attr.id="{{dir.dirName}}caption" class="caption-container"></div>
+			          <div class="slideshow-container">
+			            <div id="loading" class="loader"></div>
+			            <div attr.id="{{dir.dirName}}slideshow" class="slideshow"></div>
+			          </div>
+			    </div>
+
+
+			</div>
+
+		</div>	
+
+	</div>
+			
+
+	
+
+	<div *ngIf="allData">
+		<div *ngIf="allData.galleryData">
+
+			<a *ngIf="allData.galleryData" class="backBtn" routerLink="">Go Back</a>
+
+			<div appGalleryPlugin [dirName]="album">
+				<div class="photosite-navigation">
+
+					<ul class="thumbs noscript">
+
+					    <li *ngFor="let newDir of allData.galleryData">
+					    	<a class='thumb' name='leaf' href='{{newDir.mediumUri}}' title='Title #0'>
+					    		<img src='{{newDir.thumbnails}}' />
+					    	</a>
+
+					    	<div class='caption'>
+						    	<a href='{{newDir.ETagLink}}' target="_blank">Download Original</a> 
+						    	<span class="divider">|</span>
+						    	<a href='https://www.facebook.com/sharer/sharer.php?u={{newDir.socialshare}}' target="_blank" class="socialShareLink"> Share on Facebook</a> 
+						    	<span class="divider">|</span>
+						    	<a href='https://plus.google.com/share?url={{newDir.socialshare}}' target="_blank" class="socialShareLink"> Share on Google+</a> 
+					    	</div>
+					    	
+					    </li>
+
+					</ul>
+				</div>
+
+				 <div attr.id="{{album}}gallery" class="photosite-content">
+			          <div attr.id="{{album}}controls" class="controls"></div>
+			          <div attr.id="{{album}}nav" class="navs"></div>
+			          <div attr.id="{{album}}caption" class="caption-container"></div>
+			          <div class="slideshow-container">
+			            <div id="loading" class="loader"></div>
+			            <div attr.id="{{album}}slideshow" class="slideshow"></div>
+			          </div>
+			    </div>
+
+			</div>    
+
+		</div>
+	</div>	
+
+
+
+	 	
+
+
+

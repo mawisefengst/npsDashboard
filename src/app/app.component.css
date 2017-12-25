@@ -1,0 +1,73 @@
+.pink_title{
+	padding-left: 0;
+}
+.thumb > img{
+    background: url(../assets/images/loading.gif) center 0 transparent no-repeat;
+    width: 80px;
+    /*height: 80px;*/
+    background-color: white;
+    background-size: contain;
+    border:none;
+}
+#addGroupName{
+	display: none;
+	width: 480px;
+}
+div#container{
+	position: relative;
+}
+.caption-container > span.image-caption{
+	width: auto;
+	right:50px;
+	left: initial;
+}
+
+.caption-container > span.image-caption a{
+	color:#c61344;
+}
+a.reSyncBucket{
+	min-width: 110px;
+}
+
+
+.texteditor { padding-bottom:130px;}
+.texteditor dd{left:50px;}
+.texteditor dt{display:none;}
+.texteditor select{width:150px;}
+.texteditor select{display:none !important;}
+.texteditor { border:none;margin:0;padding:0;font:14px 'Arial';}
+.texteditor select{width:150px;}
+.texteditor .tinyeditor{border:1px solid #bbb;padding:0 1px 1px;font-family:Arial;font-size:12px;-webkit-border-radius:5px;border-radius:5px;background-clip:padding-box;}
+.texteditor .tinyeditor iframe{border:none;overflow-x:hidden;}
+.texteditor .tinyeditor-header{height:31px;border-bottom:1px solid #bbb;background:#f7f7f7;padding-top:1px;}
+.texteditor .tinyeditor-header select{float:left;}
+.texteditor .tinyeditor-font{margin-left:12px;}
+.texteditor .tinyeditor-size{margin:0 3px;}
+.texteditor .tinyeditor-style{margin-right:12px;}
+.texteditor .tinyeditor-divider{float:left;width:1px;height:30px;background:#cccccc;}
+/*.texteditor .tinyeditor-control{float:left;width:34px;height:30px;cursor:pointer;background-image:url(../images/icons.png);}
+.texteditor .tinyeditor-control:hover{background-color:#fff;background-position:30px 0;}
+.texteditor .tinyeditor-footer{height:32px;border-top:1px solid #bbb;background:#f5f5f5;}
+.texteditor .toggle{float:left;background:url(images/icons.png) -34px 2px no-repeat;padding:9px 13px 0 31px;height:23px;border-right:1px solid #ccc;cursor:pointer;color:#666666;}
+.texteditor .toggle:hover{background-color:#ffffff;}
+.texteditor .resize{float:right;height:32px;width:32px;background:url(images/resize.gif) 15px 15px no-repeat;cursor:s-resize;}*/
+.texteditor #editor{cursor:text;margin:10px;font-family:Arial;font-size:12px;}
+
+.site_header{
+	width:100%;height:103px;background-color:#242424;
+	-moz-box-shadow:0 0 5px #888;-webkit-box-shadow:0 0 5px#888;box-shadow:0 0 5px #888;
+}
+
+.site_content{width:918px;margin:0px auto;clear:both;min-height:600px;}
+
+.site_header .cms_name {
+    line-height: 26px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 26px;
+    margin: 40px 10px 0px;
+    padding: 0px 10px;
+    display: inline-block;
+    float: left;
+}
+

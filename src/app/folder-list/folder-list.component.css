@@ -1,0 +1,72 @@
+ul.thumbs li{
+	min-height: 110px;
+}
+
+ul li{
+	list-style: none;
+}
+
+ul.albumList{
+	width: 500px;
+	margin:50px auto 0;
+}
+
+
+ul.albumList li {
+	text-align: center; 
+    padding: 1em;
+    border-bottom: 1px dotted #ccc;
+}
+
+ul.albumList li > a, a.backBtn{
+    color: #c61344;
+    font-size: 14px;
+    font-family: arial, sans-serif;
+}
+
+ul.allAllbumns{
+	width: 95%;
+	margin:0;
+	margin-top:20px;
+}
+
+ul.allAllbumns > li {
+    border-bottom: 1px dotted #ccc;
+    font-weight: bold;
+    line-height: 43px;
+    text-indent: 5px;
+    padding-right: 5px;
+}
+
+a.backBtn{
+     display: block;
+     margin:20px 0;
+     font-size:18px;
+}
+div.errorMsg{
+    color:red;
+}
+.multiSelect{
+
+}
+div.formWrapper{
+    padding-left: 20px;
+}
+.submitBtn{
+    margin: 5px 0;
+}
+.leftAlign{
+    float: left;
+}
+.rightAlign{
+    float: right;
+    margin:0;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+a:hover{
+    text-decoration:none;
+}
+.addBucketBtn{
+    margin-top: 20px;
+}

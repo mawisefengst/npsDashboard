@@ -1,0 +1,59 @@
+.admin_loginbox {
+    padding: 0px 20px;
+    margin: 50px  auto 0;
+    width: 350px;
+}
+
+.admin_postbox {
+    padding: 0px 20px;
+    margin: 50px auto 0;
+    width: 800px;
+}
+
+.admin_new_box{
+    padding: 0px 20px;
+    margin: 50px auto 0;
+    width: 800px;
+}
+
+.admin_postbox .row{
+	margin-bottom: 10px;
+}
+
+.rounded_table {
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #c5c5c5;
+    background-color: #fafafa;
+}
+
+.has-error{
+	color: red;
+	font-size: 14px;
+}
+
+.createPostLink{
+	float: right;
+	margin-top: 30px;
+}
+
+.form-group textarea{
+    height: 200px;
+}
+
+.postBody{
+    margin-left: 10px; 
+}
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched{
+    border:1px solid red;
+}
+
+.form-group{
+    margin: 0 0 1rem;
+}
+
+[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea{
+    margin:0;
+}
